@@ -14,7 +14,7 @@ namespace Platformer
     {
         bool right, left;
         bool jump;
-        int G = 30;
+        int G = 25;
         int Force;
          
         public Platformer()

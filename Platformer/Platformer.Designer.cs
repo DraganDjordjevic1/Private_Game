@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Platformer));
             this.screen = new System.Windows.Forms.Panel();
             this.Block = new System.Windows.Forms.PictureBox();
             this.player = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ground = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.screen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Block)).BeginInit();
@@ -53,7 +54,9 @@
             // Block
             // 
             this.Block.BackColor = System.Drawing.Color.Gray;
-            this.Block.Location = new System.Drawing.Point(186, 179);
+            this.Block.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Block.BackgroundImage")));
+            this.Block.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Block.Location = new System.Drawing.Point(187, 239);
             this.Block.Name = "Block";
             this.Block.Size = new System.Drawing.Size(471, 38);
             this.Block.TabIndex = 3;
@@ -68,14 +71,16 @@
             this.player.TabIndex = 0;
             this.player.TabStop = false;
             // 
-            // panel1
+            // ground
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 391);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(821, 45);
-            this.panel1.TabIndex = 4;
+            this.ground.BackColor = System.Drawing.Color.White;
+            this.ground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ground.BackgroundImage")));
+            this.ground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ground.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ground.Location = new System.Drawing.Point(0, 391);
+            this.ground.Name = "ground";
+            this.ground.Size = new System.Drawing.Size(821, 45);
+            this.ground.TabIndex = 4;
             // 
             // timer1
             // 
@@ -89,7 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 436);
             this.Controls.Add(this.screen);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ground);
             this.Name = "Platformer";
             this.Text = "Platform";
             this.Load += new System.EventHandler(this.Platformer_Load);
@@ -108,7 +113,7 @@
         private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox Block;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel ground;
     }
 }
 
