@@ -32,12 +32,12 @@ namespace Platformer
         private void timer1_Tick(object sender, EventArgs e)
         {
             // 1. side collision
-            if (player.Right > Block.Left && player.Left < Block.Right - player.Width / 2 && player.Bottom > Block.Top )
+            if (player.Right > Block.Left && player.Left < Block.Right - player.Width && player.Bottom < Block.Bottom && player.Bottom > Block.Top )
             {
                 right = false;
             }
 
-            if (player.Left < Block.Right && player.Right > Block.Left + player.Width / 2 && player.Bottom > Block.Top)
+            if (player.Left < Block.Right && player.Right > Block.Left + player.Width && player.Bottom < Block.Bottom && player.Bottom > Block.Top)
             {
                 left = false;
             }
@@ -78,6 +78,13 @@ namespace Platformer
                 Force = 0;
                 player.Top = Block.Location.Y - player.Height;
             }
+            //simple fall for now
+            if (!(player.Left + player.Width > Block.Left && player.Left + player.Width < Block.Left + Block.Width + player.Width) && player.Top + player.Height >= Block.Top && player.Top < Block.Top)
+            {
+                jump = true;
+            }
+
+
             //head collision
              
             if (player.Left + player.Width > Block.Left && player.Left + player.Width < Block.Left + Block.Width + player.Width && player.Top - Block.Bottom <= 10 && player.Top - Block.Top > -10)
@@ -114,12 +121,6 @@ namespace Platformer
                 }
             }
         }
-
-        private void Block_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Platformer_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Right)

@@ -32,6 +32,7 @@
             this.screen = new System.Windows.Forms.Panel();
             this.Block = new System.Windows.Forms.PictureBox();
             this.player = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.screen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Block)).BeginInit();
@@ -40,32 +41,41 @@
             // 
             // screen
             // 
+            this.screen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.screen.Controls.Add(this.Block);
             this.screen.Controls.Add(this.player);
             this.screen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.screen.Location = new System.Drawing.Point(0, 0);
             this.screen.Name = "screen";
-            this.screen.Size = new System.Drawing.Size(821, 436);
+            this.screen.Size = new System.Drawing.Size(821, 391);
             this.screen.TabIndex = 0;
             // 
             // Block
             // 
             this.Block.BackColor = System.Drawing.Color.Gray;
-            this.Block.Location = new System.Drawing.Point(130, 239);
+            this.Block.Location = new System.Drawing.Point(186, 179);
             this.Block.Name = "Block";
-            this.Block.Size = new System.Drawing.Size(578, 57);
+            this.Block.Size = new System.Drawing.Size(471, 38);
             this.Block.TabIndex = 3;
             this.Block.TabStop = false;
-            this.Block.Click += new System.EventHandler(this.Block_Click);
             // 
             // player
             // 
             this.player.BackColor = System.Drawing.Color.Black;
-            this.player.Location = new System.Drawing.Point(27, 387);
+            this.player.Location = new System.Drawing.Point(39, 239);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(25, 25);
             this.player.TabIndex = 0;
             this.player.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 391);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(821, 45);
+            this.panel1.TabIndex = 4;
             // 
             // timer1
             // 
@@ -79,6 +89,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 436);
             this.Controls.Add(this.screen);
+            this.Controls.Add(this.panel1);
             this.Name = "Platformer";
             this.Text = "Platform";
             this.Load += new System.EventHandler(this.Platformer_Load);
@@ -97,6 +108,7 @@
         private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox Block;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
